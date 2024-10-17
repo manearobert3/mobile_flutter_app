@@ -84,6 +84,6 @@ The app has full offline support. Users can log and view data even when they are
 ## App Mockup
 Below are screen captures of the app interface:
 
-![App Mockup 1](https://github.com/ma-cs-ubbcluj-ro/crud-project-manearobert3/Screenshots/ss1.png)
+![App Mockup 1](https://github.com/ma-cs-ubbcluj-ro/crud-project-manearobert3/blob/master/Screenshots/ss1.png)
 
-![App Mockup 2](https://github.com/ma-cs-ubbcluj-ro/crud-project-manearobert3/Screenshots/ss2.png)
+![App Mockup 2](https://github.com/ma-cs-ubbcluj-ro/crud-project-manearobert3/blob/master/Screenshots/ss2.png)
