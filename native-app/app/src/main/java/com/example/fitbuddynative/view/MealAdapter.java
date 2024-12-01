@@ -18,7 +18,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MealAdapter  extends RecyclerView.Adapter<MealAdapter.MealViewHolder> {
+public class MealAdapter extends RecyclerView.Adapter<MealAdapter.MealViewHolder> {
 
     private List<Meal> mealList;
     private final OnItemClickListener listener;
@@ -38,11 +38,6 @@ public class MealAdapter  extends RecyclerView.Adapter<MealAdapter.MealViewHolde
         notifyDataSetChanged();
     }
 
-
-    public void removeMeal(int position) {
-        mealList.remove(position);
-        notifyItemRemoved(position);
-    }
 
     @NonNull
     @Override
