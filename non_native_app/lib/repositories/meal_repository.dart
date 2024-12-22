@@ -1,61 +1,40 @@
 import '../models/meal.dart';
+import '../services/database_helper.dart';
 
 class MealRepository {
-  final List<Meal> _meals = [
-    Meal(
-      name: 'Oatmeal with Berries',
-      type: 'Meal',
-      calories: 300,
-      time: DateTime.now().subtract(Duration(hours: 5)),
-    ),
-    Meal(
-      name: 'Greek Yogurt',
-      type: 'Snack',
-      calories: 150,
-      time: DateTime.now().subtract(Duration(hours: 4)),
-    ),
-    Meal(
-      name: 'Quinoa Salad',
-      type: 'Meal',
-      calories: 350,
-      time: DateTime.now().subtract(Duration(hours: 2)),
-    ),
-    Meal(
-      name: 'Almonds',
-      type: 'Snack',
-      calories: 170,
-      time: DateTime.now().subtract(Duration(hours: 1)),
-    ),
-    Meal(
-      name: 'Grilled Chicken and Veggies',
-      type: 'Meal',
-      calories: 450,
-      time: DateTime.now(),
-    ),
-    Meal(
-      name: 'Protein Shake',
-      type: 'Snack',
-      calories: 200,
-      time: DateTime.now().add(Duration(hours: 1)),
-    ),
-  ];
-
-  List<Meal> getMeals() {
-    return _meals;
-  }
-
-  void addMeal(Meal meal) {
-    _meals.add(meal);
-  }
-
-  void updateMeal(int id, Meal updatedMeal) {
-    final index = _meals.indexWhere((meal) => meal.id == id);
-    if (index != -1) {
-      _meals[index] = updatedMeal;
+  Future<List<Meal>> getMeals() async {
+    try {
+      return await DatabaseHelper.getAllMeal() ?? [];
+    } catch (e) {
+      print('Repository Error (getMeals): $e');
+      throw Exception('Unable to load meals.');
     }
   }
 
-  void deleteMeal(int id) {
-    _meals.removeWhere((meal) => meal.id == id);
+  Future<int> addMeal(Meal meal) async {
+    try {
+      return await DatabaseHelper.addMeal(meal);
+    } catch (e) {
+      print('Repository Error (addMeal): $e');
+      throw Exception('Failed to add meal.');
+    }
+  }
+
+  Future<void> updateMeal(int id, Meal meal) async {
+    try {
+      await DatabaseHelper.updateMeal(meal, id);
+    } catch (e) {
+      print('Repository Error (updateMeal): $e');
+      throw Exception('Failed to update meal.');
+    }
+  }
+
+  Future<void> deleteMeal(int id) async {
+    try {
+      await DatabaseHelper.deleteMeal(id);
+    } catch (e) {
+      print('Repository Error (deleteMeal): $e');
+      throw Exception('Failed to delete meal.');
+    }
   }
 }

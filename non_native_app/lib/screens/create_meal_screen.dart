@@ -31,9 +31,19 @@ class _CreateMealScreenState extends State<CreateMealScreen> {
         calories: int.parse(_caloriesController.text),
         time: _selectedDate ?? DateTime.now(),
       );
-      Provider.of<MealProvider>(context, listen: false).addMeal(meal);
+      try {
+        Provider.of<MealProvider>(context, listen: false).addMeal(meal);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Meal added successfully!')),
+        );
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(e.toString())),
+        );
+      }
       Navigator.pop(context);
     }
+
   }
 
   Future<void> _pickDate() async {

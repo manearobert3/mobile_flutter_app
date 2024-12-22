@@ -61,7 +61,7 @@ class MealListItem extends StatelessWidget {
                 style: TextStyle(fontSize: 18),
               ),
               onPressed: () {
-                _confirmDelete(context, meal.id);
+                  _confirmDelete(context, meal.id!);
               },
             ),
           ],
@@ -82,8 +82,18 @@ class MealListItem extends StatelessWidget {
             child: Text('Cancel'),
           ),
           TextButton(
-            onPressed: () {
-              Provider.of<MealProvider>(context, listen: false).deleteMeal(id);
+            onPressed: () async {
+              try {
+                await Provider.of<MealProvider>(context, listen: false).deleteMeal(
+                    id);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Meal deleted successfully!')),
+                );
+              }catch (e) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(e.toString())),
+                );
+              }
               Navigator.pop(context);
             },
             child: Text('Delete'),

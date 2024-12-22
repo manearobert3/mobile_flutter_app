@@ -24,8 +24,9 @@ class _EditMealScreenState extends State<EditMealScreen> {
   void initState() {
     super.initState();
     _nameController = TextEditingController(text: widget.meal.name);
-    _caloriesController = TextEditingController(text: widget.meal.calories.toString());
-    _typeController = TextEditingController(text:widget.meal.type.toString());
+    _caloriesController =
+        TextEditingController(text: widget.meal.calories.toString());
+    _typeController = TextEditingController(text: widget.meal.type.toString());
     _selectedDate = widget.meal.time;
   }
 
@@ -45,7 +46,17 @@ class _EditMealScreenState extends State<EditMealScreen> {
         calories: int.parse(_caloriesController.text),
         time: _selectedDate ?? DateTime.now(),
       );
-      Provider.of<MealProvider>(context, listen: false).updateMeal(widget.meal.id, updatedMeal);
+      try {
+        Provider.of<MealProvider>(context, listen: false)
+            .updateMeal(widget.meal.id!, updatedMeal);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Meal updated successfully!')),
+        );
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(e.toString())),
+        );
+      }
       Navigator.pop(context);
     }
   }
@@ -176,7 +187,8 @@ class _EditMealScreenState extends State<EditMealScreen> {
                             floatingLabelBehavior: FloatingLabelBehavior.always,
                             hintText: _selectedDate == null
                                 ? 'No Date Chosen!'
-                                : DateFormat('yyyy-MM-dd').format(_selectedDate!),
+                                : DateFormat('yyyy-MM-dd')
+                                    .format(_selectedDate!),
                             filled: true,
                             fillColor: Colors.grey[200],
                             border: OutlineInputBorder(
@@ -194,7 +206,8 @@ class _EditMealScreenState extends State<EditMealScreen> {
                     SizedBox(height: 24),
                     // Submit Button
                     SizedBox(
-                      width: screenWidth * 0.8, // Button width relative to screen
+                      width:
+                          screenWidth * 0.8, // Button width relative to screen
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(vertical: 16),

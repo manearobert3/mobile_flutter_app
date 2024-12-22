@@ -6,7 +6,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(), // Optional: Add a drawer if needed
+      drawer: Drawer(),
       appBar: AppBar(
         title: Text('Meals'),
         actions: [
