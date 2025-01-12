@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'providers/meal_provider.dart';
 import 'screens/home_screen.dart';
 
+
+
 void main() {
   runApp(
     ChangeNotifierProvider(
