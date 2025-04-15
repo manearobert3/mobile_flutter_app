@@ -1,0 +1,43 @@
+2025-01-13 12:21:12 [INFO]: Server started!
+2025-01-13 12:21:12 [INFO]: Server is running on port 3002
+2025-01-13 12:21:12 [INFO]: Connected to the meals database.
+2025-01-13 12:22:35 [INFO]: Server started!
+2025-01-13 12:22:35 [INFO]: Server is running on port 3002
+2025-01-13 12:22:35 [INFO]: Connected to the meals database.
+2025-01-13 12:22:40 [INFO]: Successfully retrieved all meals
+2025-01-13 12:22:40 [INFO]: Meal with ID 2743 was deleted
+2025-01-13 12:24:00 [INFO]: Server started!
+2025-01-13 12:24:00 [INFO]: Server is running on port 3002
+2025-01-13 12:24:00 [INFO]: Connected to the meals database.
+2025-01-13 12:24:20 [INFO]: Successfully retrieved all meals
+2025-01-13 12:24:28 [INFO]: Successfully retrieved all meals
+2025-01-13 12:24:28 [INFO]: Client connected via WebSocket
+2025-01-13 12:24:28 [INFO]: Successfully retrieved all meals
+2025-01-13 12:24:29 [INFO]: Successfully retrieved all meals
+2025-01-13 12:24:29 [INFO]: Successfully retrieved all meals
+2025-01-13 12:24:29 [INFO]: Successfully retrieved all meals
+2025-01-13 12:24:29 [INFO]: Successfully retrieved all meals
+2025-01-13 12:24:29 [INFO]: Successfully retrieved all meals
+2025-01-13 12:24:40 [INFO]: Server started!
+2025-01-13 12:24:40 [INFO]: Server is running on port 3002
+2025-01-13 12:24:40 [INFO]: Connected to the meals database.
+2025-01-13 12:27:54 [INFO]: Server started!
+2025-01-13 12:27:54 [INFO]: Server is running on port 3002
+2025-01-13 12:27:54 [INFO]: Connected to the meals database.
+2025-01-13 12:28:59 [INFO]: Successfully retrieved all meals
+2025-01-13 12:29:00 [INFO]: Client connected via WebSocket
+2025-01-13 12:29:00 [INFO]: Successfully retrieved all meals
+2025-01-13 12:29:00 [INFO]: Successfully retrieved all meals
+2025-01-13 12:29:00 [INFO]: Successfully retrieved meal with id: 2754
+2025-01-13 12:29:00 [INFO]: Meal with ID 2754 was deleted
+2025-01-13 12:29:00 [INFO]: Successfully retrieved meal with id: 2820
+2025-01-13 12:29:00 [INFO]: Successfully retrieved all meals
+2025-01-13 12:29:00 [INFO]: Meal with ID 2820 was updated
+2025-01-13 12:29:01 [INFO]: New meal added with ID 2827
+2025-01-13 12:29:01 [INFO]: Successfully retrieved all meals
+2025-01-13 12:29:01 [INFO]: Successfully retrieved all meals
+2025-01-13 12:29:01 [INFO]: Successfully retrieved all meals
+2025-01-13 12:29:02 [INFO]: Successfully retrieved all meals
+2025-01-13 12:29:02 [INFO]: Successfully retrieved all meals
+2025-01-13 12:29:23 [INFO]: Successfully retrieved all meals
+2025-01-13 12:30:52 [WARN]: Client disconnected
