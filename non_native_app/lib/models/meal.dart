@@ -22,13 +22,14 @@ class Meal {
     time: DateTime.parse(json['time']),
   );
 
-  Map<String,dynamic> toJson() =>{
-    if (id != null) 'id': id,
-    'name': name,
-    'type' : type,
-    'calories': calories,
-    'time': time.toIso8601String(),
-  };
+  Map<String,dynamic> toJson(){
+    return {if (id != null) 'id': id,
+      'name': name,
+      'type': type,
+      'calories': calories,
+      'time': time.toIso8601String(),
+    };
+  }
   Meal copyWith({
     int? id,
     String? name,
